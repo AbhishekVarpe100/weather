@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav style="background-image: linear-gradient(to right,black,blue); " class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a style="color: white;" class="navbar-brand" href="#">Weather App <img style="border-radius:4px; width:30px;" src="logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+             
+              <li class="nav-item">
+                <li class="nav-item">
+                    <a id="hovering" style="color: white;" class="nav-link active" href="#about">
+                      About this app
+                    </a>
+                  </li>
+                
+              </li>
+          
+              <li class="nav-item">
+                <a id="hovering" style="color: white;" class="nav-link active" href="#how_to_use">
+                  How to use
+                </a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input id="city" type="text" class="form-control me-2" placeholder="Search city" type="search" aria-label="search">
+                <button class="btn btn-outline-info" type="submit" id="submit">Search</button>
+            </form>
+          </div>
+        </div>  
+      </nav>
+      <h1 class="text-center">Created by <i style="color: blueviolet;">Abhi</i></h1>
+      <h1 class="py-4 text-center">Weather for <span class="text-secondary" id="cityName"></span></h1>
+
+
+      <div class="container">
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-lg border-primary">
+                  <div class="card-header py-3 bg-info ">
+                    <h4 class="my-0 fw-normal">Temperatures</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="">Temperature is <span id="temp"></span> *C</h1>
+                    <br>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Min temperature is <span id="min_temp"></span></li>
+                      <br>
+                      <li>Max temperature is <span id="max_temp"></span></li>
+                      <br>
+                
+                    </ul>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-lg border-primary">
+                  <div class="card-header py-3 bg-info">
+                    <h4 class="my-0 fw-normal">Humidity_info</h4>
+                  </div>
+                  <div class="card-body">
+                    
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Cloud pct is <span id="cloud_pct"></span></li>
+                        <br>
+                        <li>Feels like is <span id="feels_like"></span></li>
+                        <br>
+                        <li>Humidity is <span id="humidity"></span></li>
+                        <br>
+                        
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-lg border-primary">
+                  <div class="card-header py-3  border-primary bg-info">
+                    <h4 class="my-0 fw-normal">Wind_info</h4>
+                  </div>
+                  <div class="card-body">
+                    
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Wind speed is <span id="wind_speed"></span></li>
+                        <br>
+                        <li>Wind degree is <span id="wind_degrees"></span></li>
+                        <br>
+                        <li>Sunrise time is <span id="sunrise"></span></li>
+                        <br>
+                        <li>Sunset time is <span id="sunset"></span></li>
+                        
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <h2 class="display-6 text-center mb-4">Weather of other common places</h2>
+        
+            <div class="table-responsive">
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <th style="width: 34%;"></th>
+                    <th style="width: 22%;">Cloud_pct</th>
+                    <th style="width: 22%;">Feels_like</th>
+                    <th style="width: 22%;">Humidity</th>
+                    <th style="width: 22%;">Max_temp</th>
+                    <th style="width: 22%;">Min_temp</th>
+                    <th style="width: 22%;">Sunrise</th>
+                    <th style="width: 22%;">Sunset</th>
+                    <th style="width: 22%;">Temp</th>
+                    <th style="width: 22%;">Wind_degree</th>
+                    <th style="width: 22%;">Wind_speed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-start">Shanghai</th>
+                    <td><span id="cloud_pct1"></span></td>
+                    <td><span id="feels_like1"></span></td>
+                    <td><span id="humidity1"></span></td>
+                    <td><span id="max_temp1"></span></td>
+                    <td><span id="min_temp1"></span></td>
+                    <td><span id="sunrise1"></span></td>
+                    <td><span id="sunset1"></span></td>
+                    <td><span id="temp1"></span></td>
+                    <td><span id="wind_degrees1"></span></td>
+                    <td><span id="wind_speed1"></span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Bostan</th>
+                    <td><span id="cloud_pct2"></span></td>
+                    <td><span id="feels_like2"></span></td>
+                    <td><span id="humidity2"></span></td>
+                    <td><span id="max_temp2"></span></td>
+                    <td><span id="min_temp2"></span></td>
+                    <td><span id="sunrise2"></span></td>
+                    <td><span id="sunset2"></span></td>
+                    <td><span id="temp2"></span></td>
+                    <td><span id="wind_degrees2"></span></td>
+                    <td><span id="wind_speed2"></span></td>
+                  </tr>
+                </tbody>
+        
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-start">Lucknow</th>
+                    <td><span id="cloud_pct3"></span></td>
+                    <td><span id="feels_like3"></span></td>
+                    <td><span id="humidity3"></span></td>
+                    <td><span id="max_temp3"></span></td>
+                    <td><span id="min_temp3"></span></td>
+                    <td><span id="sunrise3"></span></td>
+                    <td><span id="sunset3"></span></td>
+                    <td><span id="temp3"></span></td>
+                    <td><span id="wind_degrees3"></span></td>
+                    <td><span id="wind_speed3"></span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Kolkata</th>
+                    <td><span id="cloud_pct4"></span></td>
+                    <td><span id="feels_like4"></span></td>
+                    <td><span id="humidity4"></span></td>
+                    <td><span id="max_temp4"></span></td>
+                    <td><span id="min_temp4"></span></td>
+                    <td><span id="sunrise4"></span></td>
+                    <td><span id="sunset4"></span></td>
+                    <td><span id="temp4"></span></td>
+                    <td><span id="wind_degrees4"></span></td>
+                    <td><span id="wind_speed4"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+      </div>
+      <div>
+        <center>
+            <div>_____</div><div>_________</div><div>____________</div>
+            <div>_____</div><div>_________</div><div>____________</div>
+            <div>_____</div><div>_________</div><div>____________</div>
+            <div>_____</div><div>_________</div><div>____________</div>
+        </center>
+        <center><h1><u><i>How to use</i></u></h1></center>
+        <p class="card container text-dark p-3 rounded-3 shadow-lg border-primary" id="how_to_use">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio accusamus amet corrupti blanditiis tempora officia suscipit natus corporis ipsum possimus! Cum velit, consectetur dicta laborum necessitatibus a eius quis repudiandae minus eaque! Tenetur nisi consequatur recusandae eligendi sit fuga, perferendis error laudantium, iure quos vero, molestiae voluptatum mollitia laborum animi rem inventore. Aliquid enim eveniet beatae unde optio facere perspiciatis ab ut nihil neque hic excepturi vel aliquam labore mollitia reiciendis assumenda sapiente alias sed, porro maiores, consequatur commodi! Exercitationem labore iste optio delectus, ea animi quas modi facilis ratione esse, deserunt corporis non dolorum, harum ducimus dignissimos cum sed.
+        </p>
+        <br>
+        <br>
+        <center><h1><u><i>About this app</i></u></h1></center>
+        <p class="card container text-dark p-3 rounded-3 shadow-lg border-primary" id="about">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum numquam temporibus, dolorum nemo ex dolores commodi inventore quae voluptate minima saepe expedita, nisi dicta, libero aperiam incidunt. Dolor quaerat corrupti officia fugiat, similique harum, deserunt voluptate ea expedita pariatur totam rerum ducimus impedit quis, sunt placeat optio maiores distinctio! Praesentium accusantium, inventore eaque quibusdam quae quaerat blanditiis cupiditate odio consequuntur dolorem perferendis officia et corporis. Accusamus ratione aliquid pariatur sequi ipsam eligendi unde deserunt impedit sunt atque mollitia ea, cum qui nostrum suscipit possimus tempore officiis dolorem nesciunt omnis distinctio ex repellat inventore. Natus doloremque nisi omnis odit possimus eveniet sint corrupti, perspiciatis ab ratione iusto aut. Repellat cumque excepturi eveniet! Deserunt aperiam unde est voluptatum rem non incidunt reprehenderit corrupti necessitatibus mollitia impedit odit quidem culpa iure rerum, assumenda excepturi sint doloremque! Praesentium debitis ex voluptatem non quisquam quae commodi repudiandae repellat architecto quod? Suscipit dicta aliquam reiciendis tempore est cum? Officia eum facere in accusantium odio voluptatum! Quibusdam eligendi iste esse tempore ullam voluptates assumenda sequi qui iure atque vero est quae, quisquam repellendus asperiores ex, quidem non laboriosam nam provident omnis voluptatem! Aliquam recusandae deleniti, quas voluptatum, necessitatibus eius, consequatur nobis ullam voluptatem minus optio debitis illum!
+        </p>
+      </div>
+      
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="function.js"></script>
+  </body>
+</html>
